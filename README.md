@@ -1,7 +1,19 @@
-Emil Kjerrman, b1990 emil@kjerrman.dk
-Bor og arbejder i Leipzig/København.
+# Artist Site Starter
 
-Kunstnerisk arbejde.
-Emil Kjerrmans kunstneriske praksis beskæftiger sig med figurativt maleri, grafik og mulighederne i de todimensionelle kunstformer.
-Kjerrmans malerier bliver udført med et tykt lag af selvfremstillet oliefarve, som giver betragteren følelsen af, at værkerne er tunge ujævne sten relieffer.
-I værket ”Rust patineret familie”, skrabes figurative silhuetter frem i den tykke pig- ment. Her sætter kunstneren fokus på sine egne personlige erfaringer i forhold til familierelationer, kønsnormer og generationsmønstre. Sten -og jordpigmenter- ne giver maleriet en vidunderlig taktilitet af ler og kridt, som giver skaber tyngde i de afbillede figurer. De bliver på denne måde som blomster og rødder i jorden. Kunsten bliver et ståsted for at skabe tryghed og ydmyghed overfor den natur vi lever i, og de mennesker vi omgåes med.
+This is a minimal, no-framework artist website. Edit the HTML files and replace images in `/images`.
+
+## How to use
+1. Put your images in the `images/` folder (e.g., `painting1.jpg`).
+2. Edit text in `index.html`, `works.html`, `about.html`, `contact.html`.
+3. Open `index.html` locally to preview.
+4. Deploy to GitHub Pages (see below).
+
+## GitHub Pages (User Site)
+1. Create a GitHub account and a new public repository named **YOURUSERNAME.github.io**.
+2. Upload all files from this folder to the repository root (not inside a subfolder).
+3. Commit and push. GitHub Pages will auto-build your site at `https://YOURUSERNAME.github.io/`.
+4. If you see a 404 initially, wait a minute and refresh.
+
+## Custom Domain (optional)
+- Buy a domain (e.g., name.com) and add a `CNAME` file containing only your domain (e.g., `emilkjerrman.com`).
+- In the repo settings → Pages, set the custom domain and enforce HTTPS.

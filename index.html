@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Emil Kjerrman</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Emil Kjerrman</h1>
+
+  <nav>
+    <a href="index.html">Home</a> |
+    <a href="works.html">Works</a> |
+    <a href="about.html">About</a> |
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <h2>Welcome</h2>
+  <p>Painter based in Leipzig. This website presents selected works, projects, and information.</p>
+  <p>Please explore the links above to see more.</p>
+  <footer>© <span id="year"></span> Emil Kjerrman</footer>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
