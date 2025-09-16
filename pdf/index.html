@@ -4,106 +4,75 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Mine PDF-dokumenter</title>
-  <meta name="description" content="Oversigt over PDF-dokumenter og QR-kode til siden" />
   <style>
-    :root{--bg:#0b0b0c;--card:#151517;--muted:#9aa0a6;--text:#f2f3f5;--accent:#6ee7b7;--border:#26262a}
-    *{box-sizing:border-box}
-    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Ubuntu,Helvetica,Arial,sans-serif;background:linear-gradient(180deg,#0b0b0c,#101114 25%,#0b0b0c);color:var(--text);}
-    .wrap{max-width:980px;margin:32px auto;padding:0 16px}
-    .card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:20px;box-shadow:0 10px 30px rgba(0,0,0,.25)}
-    h1{font-size:clamp(24px,4vw,40px);line-height:1.1;margin:0 0 8px}
-    p.lead{color:var(--muted);margin:0 0 18px}
-    .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;margin:16px 0}
-    .pdf{display:flex;gap:12px;align-items:flex-start;background:#0f1012;border:1px solid var(--border);border-radius:14px;padding:14px;text-decoration:none;color:var(--text);transition:.2s ease}
-    .pdf:hover{transform:translateY(-2px);border-color:#2f2f35}
-    .pdf .icon{flex:0 0 36px;height:46px;border-radius:8px;background:linear-gradient(180deg,#ef4444,#dc2626);display:grid;place-items:center;font-weight:800}
-    .pdf .meta{display:grid;gap:4px}
-    .pdf .title{font-weight:650}
-    .pdf .size{color:var(--muted);font-size:13px}
-    .row{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
-    .btn{background:#181a1e;border:1px solid var(--border);color:var(--text);padding:10px 14px;border-radius:12px;cursor:pointer}
-    .btn:hover{border-color:#33363d}
-    .btn.primary{background:#0f1714;border-color:#1d2a25}
-    .badge{border:1px solid #2a2d34;color:var(--muted);padding:6px 10px;border-radius:999px;font-size:13px}
-    .qr{display:none;place-items:center;margin-top:16px}
-    .qr img{max-width:240px;height:auto;border-radius:12px;border:1px solid var(--border);background:#0b0b0c;padding:8px}
-    footer{margin:28px 0 8px;color:var(--muted);font-size:13px;text-align:center}
-    code.inline{background:#121316;border:1px solid var(--border);padding:2px 6px;border-radius:6px}
+    body { font-family: system-ui, sans-serif; background: #0b0b0c; color: #f2f3f5; margin: 0; }
+    .wrap { max-width: 900px; margin: 32px auto; padding: 0 16px; }
+    h1 { font-size: 2rem; margin-bottom: 0.5rem; }
+    .pdf { display: flex; gap: 12px; align-items: flex-start; background:#151517;
+           border:1px solid #26262a; border-radius:14px; padding:14px;
+           text-decoration:none; color:inherit; margin: 8px 0; }
+    .pdf:hover { border-color:#33363d; }
+    .icon { flex:0 0 40px; height:50px; border-radius:8px;
+            background:linear-gradient(180deg,#ef4444,#dc2626);
+            display:grid; place-items:center; font-weight:700; }
+    .meta { display:grid; gap:4px; }
+    .title { font-weight:600; }
+    .size { font-size:13px; color:#9aa0a6; }
+    #qrBox { display:none; margin-top:16px; }
+    #qrBox img { max-width:200px; border:1px solid #26262a; border-radius:12px; background:#0b0b0c; padding:8px; }
+    button { background:#181a1e; border:1px solid #26262a; color:#f2f3f5; padding:8px 12px; border-radius:10px; cursor:pointer; }
+    button:hover { border-color:#33363d; }
   </style>
 </head>
 <body>
   <div class="wrap">
-    <div class="card">
-      <h1>Mine PDF-dokumenter</h1>
-      <p class="lead">Her samler jeg PDF'er. Del siden med linket herunder – eller lav en QR-kode til print og plakater.</p>
-      
-      <div class="row" style="margin-bottom:10px">
-        <button id="showQr" class="btn primary">Vis QR‑kode til denne side</button>
-        <a id="downloadQr" class="btn" href="#" download="qr-til-siden.png" style="display:none">Download QR som PNG</a>
-        <span class="badge">Side‑URL: <code class="inline" id="pageUrl"></code></span>
-      </div>
-      
-      <div class="qr" id="qrBox"><img id="qrImg" alt="QR-kode til denne side" /></div>
+    <h1>Mine PDF-dokumenter</h1>
+    <p>Alle filer i listen herunder åbner i en ny fane.</p>
 
-      <h2 style="margin:22px 0 8px">Dokumenter</h2>
-      <p class="lead" style="margin:0 0 8px">Upload dine PDF'er til samme mappe som denne fil – og læg dem i listen herunder.</p>
-      
-      <div class="grid" id="pdfList">
-        <!-- 📄 SÅDAN TILFØJER DU PDF'ER:
-          1) Upload PDF'en til samme mappe som denne HTML-fil (fx /pdf/ på din hjemmeside)
-          2) Kopiér en af <a class="pdf" ...> blokke herunder og ret href + titel
-        -->
+    <!-- Knap til QR -->
+    <button id="showQr">Vis QR-kode til denne side</button>
+    <div id="qrBox"><img id="qrImg" alt="QR-kode til denne side" /></div>
 
-        <!-- Eksempelposter – erstat med dine egne: -->
-        <a class="pdf" href="./Eksempel-1.pdf" target="_blank" rel="noopener">
-          <div class="icon">PDF</div>
-          <div class="meta">
-            <div class="title">Eksempel 1 – Program.pdf</div>
-            <div class="size">Åbner i ny fane</div>
-          </div>
-        </a>
-        <a class="pdf" href="./Eksempel-2.pdf" target="_blank" rel="noopener">
-          <div class="icon">PDF</div>
-          <div class="meta">
-            <div class="title">Eksempel 2 – Portfolio.pdf</div>
-            <div class="size">Åbner i ny fane</div>
-          </div>
-        </a>
-      </div>
-
-      <details style="margin-top:10px">
-        <summary>📌 Hjælp: vedligehold siden</summary>
-        <ul>
-          <li>Læg nye filer i samme mappe som denne fil (fx <code class="inline">/pdf/</code>).</li>
-          <li>Kopiér en eksisterende PDF‑blok i koden og ret <code class="inline">href</code> og titel.</li>
-          <li>Vil du have siden på en fast adresse, så gem den som <code class="inline">index.html</code> i mappen.</li>
-        </ul>
-      </details>
-    </div>
-
-    <footer>© <span id="year"></span> – PDF‑samling</footer>
+    <h2>Dokumenter</h2>
+    <div id="pdfList"></div>
   </div>
 
   <script>
-    // Sæt side-URL og årstal
+    // 🔽 Tilføj dine PDF'er her 🔽
+    const pdfs = [
+      { file: "Eksempel-1.pdf", title: "Eksempel 1 – Program.pdf" },
+      { file: "Eksempel-2.pdf", title: "Eksempel 2 – Portfolio.pdf" }
+    ];
+    // 🔼 Tilføj nye linjer med { file: "filnavn.pdf", title: "Titel" }
+
+    // Byg listen
+    const list = document.getElementById("pdfList");
+    pdfs.forEach(pdf => {
+      const a = document.createElement("a");
+      a.className = "pdf";
+      a.href = `./${pdf.file}`;
+      a.target = "_blank";
+      a.rel = "noopener";
+      a.innerHTML = `
+        <div class="icon">PDF</div>
+        <div class="meta">
+          <div class="title">${pdf.title}</div>
+          <div class="size">Åbner i ny fane</div>
+        </div>
+      `;
+      list.appendChild(a);
+    });
+
+    // QR kode generator
     const url = window.location.href.split('#')[0];
-    document.getElementById('pageUrl').textContent = url;
-    document.getElementById('year').textContent = new Date().getFullYear();
+    const btn = document.getElementById("showQr");
+    const qrBox = document.getElementById("qrBox");
+    const qrImg = document.getElementById("qrImg");
 
-    // QR: brug en gratis generator-tjeneste til at lave et billede (ingen tracking tilføjes herfra)
-    const btn = document.getElementById('showQr');
-    const qrBox = document.getElementById('qrBox');
-    const qrImg = document.getElementById('qrImg');
-    const dl = document.getElementById('downloadQr');
-
-    btn.addEventListener('click', () => {
+    btn.addEventListener("click", () => {
       const encoded = encodeURIComponent(url);
-      const api = `https://api.qrserver.com/v1/create-qr-code/?size=480x480&margin=10&data=${encoded}`;
-      qrImg.src = api;
-      qrBox.style.display = 'grid';
-      // Tilbyd download af samme billede
-      dl.href = api;
-      dl.style.display = 'inline-block';
+      qrImg.src = `https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=${encoded}`;
+      qrBox.style.display = "block";
     });
   </script>
 </body>
