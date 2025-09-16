@@ -3,77 +3,43 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Mine PDF-dokumenter</title>
+  <title>Åbn PDF</title>
+  <!-- 🔁 Fallback: meta-refresh hvis JS er slået fra -->
+  <meta http-equiv="refresh" content="1; url=./DIN-FIL.pdf">
   <style>
-    body { font-family: system-ui, sans-serif; background: #0b0b0c; color: #f2f3f5; margin: 0; }
-    .wrap { max-width: 900px; margin: 32px auto; padding: 0 16px; }
-    h1 { font-size: 2rem; margin-bottom: 0.5rem; }
-    .pdf { display: flex; gap: 12px; align-items: flex-start; background:#151517;
-           border:1px solid #26262a; border-radius:14px; padding:14px;
-           text-decoration:none; color:inherit; margin: 8px 0; }
-    .pdf:hover { border-color:#33363d; }
-    .icon { flex:0 0 40px; height:50px; border-radius:8px;
-            background:linear-gradient(180deg,#ef4444,#dc2626);
-            display:grid; place-items:center; font-weight:700; }
-    .meta { display:grid; gap:4px; }
-    .title { font-weight:600; }
-    .size { font-size:13px; color:#9aa0a6; }
-    #qrBox { display:none; margin-top:16px; }
-    #qrBox img { max-width:200px; border:1px solid #26262a; border-radius:12px; background:#0b0b0c; padding:8px; }
-    button { background:#181a1e; border:1px solid #26262a; color:#f2f3f5; padding:8px 12px; border-radius:10px; cursor:pointer; }
-    button:hover { border-color:#33363d; }
+    body{font-family:system-ui,-apple-system,Segoe UI,Inter,Roboto,Arial,sans-serif;background:#0b0b0c;color:#f2f3f5;display:grid;place-items:center;height:100dvh;margin:0}
+    .card{max-width:720px;background:#151517;border:1px solid #26262a;border-radius:16px;padding:22px;text-align:center}
+    a.btn{display:inline-block;margin-top:10px;padding:10px 14px;border:1px solid #2c2f36;border-radius:10px;color:#f2f3f5;text-decoration:none}
+    code{background:#101215;border:1px solid #26262a;padding:2px 6px;border-radius:6px}
+    .qr{margin-top:14px}
+    .qr img{max-width:180px;border:1px solid #26262a;border-radius:12px;background:#0b0b0c;padding:8px}
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <h1>Mine PDF-dokumenter</h1>
-    <p>Alle filer i listen herunder åbner i en ny fane.</p>
+  <div class="card">
+    <h1>Åbner PDF…</h1>
+    <p>Hvis intet sker: <a id="direct" class="btn" href="./DIN-FIL.pdf">Åbn PDF her</a></p>
+    <p>Filsti: <code id="path">./DIN-FIL.pdf</code></p>
 
-    <!-- Knap til QR -->
-    <button id="showQr">Vis QR-kode til denne side</button>
-    <div id="qrBox"><img id="qrImg" alt="QR-kode til denne side" /></div>
-
-    <h2>Dokumenter</h2>
-    <div id="pdfList"></div>
+    <div class="qr">
+      <p>QR‑kode direkte til PDF’en:</p>
+      <img id="qr" alt="QR til PDF" />
+    </div>
   </div>
 
   <script>
-    // 🔽 Tilføj dine PDF'er her 🔽
-    const pdfs = [
-      { file: "Eksempel-1.pdf", title: "Eksempel 1 – Program.pdf" },
-      { file: "Eksempel-2.pdf", title: "Eksempel 2 – Portfolio.pdf" }
-    ];
-    // 🔼 Tilføj nye linjer med { file: "filnavn.pdf", title: "Titel" }
+    // ⚙️ Indstil navnet på din PDF her:
+    const FILE = "DIN-FIL.pdf"; // ← ret til fx "Program2025.pdf"
 
-    // Byg listen
-    const list = document.getElementById("pdfList");
-    pdfs.forEach(pdf => {
-      const a = document.createElement("a");
-      a.className = "pdf";
-      a.href = `./${pdf.file}`;
-      a.target = "_blank";
-      a.rel = "noopener";
-      a.innerHTML = `
-        <div class="icon">PDF</div>
-        <div class="meta">
-          <div class="title">${pdf.title}</div>
-          <div class="size">Åbner i ny fane</div>
-        </div>
-      `;
-      list.appendChild(a);
-    });
+    // Redirect med det samme
+    const target = `./${FILE}`;
+    try { window.location.replace(target); } catch (e) { window.location.href = target; }
 
-    // QR kode generator
-    const url = window.location.href.split('#')[0];
-    const btn = document.getElementById("showQr");
-    const qrBox = document.getElementById("qrBox");
-    const qrImg = document.getElementById("qrImg");
-
-    btn.addEventListener("click", () => {
-      const encoded = encodeURIComponent(url);
-      qrImg.src = `https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=${encoded}`;
-      qrBox.style.display = "block";
-    });
+    // Opdater fallback-link, label og QR-kode
+    document.getElementById('direct').href = target;
+    document.getElementById('path').textContent = target;
+    const encoded = encodeURIComponent(new URL(target, window.location.href).href);
+    document.getElementById('qr').src = `https://api.qrserver.com/v1/create-qr-code/?size=360x360&margin=10&data=${encoded}`;
   </script>
 </body>
 </html>
