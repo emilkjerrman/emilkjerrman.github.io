@@ -1,242 +1,74 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Emil Kjerrman</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-    <script src="https://unpkg.com/feather-icons"></script>
-    <style>
-        html {
-            scroll-behavior: smooth;
-        }
-        .artwork-item {
-            transition: transform 0.3s ease;
-        }
-        .artwork-item:hover {
-            transform: scale(1.03);
-        }
-        .nav-link {
-            position: relative;
-        }
-        .nav-link:after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 1px;
-            bottom: 0;
-            left: 0;
-            background-color: currentColor;
-            transition: width 0.3s ease;
-        }
-        .nav-link:hover:after {
-            width: 100%;
-        }
-        .active:after {
-            width: 100%;
-        }
-    </style>
-</head>
-<body class="bg-white text-gray-900 font-sans">
-    <header class="fixed top-0 left-0 right-0 bg-white z-50 shadow-sm">
-        <div class="container mx-auto px-6 py-4">
-            <div class="flex justify-between items-center">
-                <h1 class="text-xl font-medium">EMIL KJERRMAN</h1>
-                <nav class="hidden md:block">
-                    <ul class="flex space-x-8">
-                        <li><a href="#work" class="nav-link active">WORK</a></li>
-                        <li><a href="#about" class="nav-link">ABOUT</a></li>
-                        <li><a href="#shows" class="nav-link">CURRENT AND UPCOMING SHOWS</a></li>
-                        <li><a href="#contact" class="nav-link">CONTACT</a></li>
-                    </ul>
-                </nav>
-                <button class="md:hidden">
-                    <i data-feather="menu"></i>
-                </button>
-            </div>
-        </div>
-    </header>
+<section class="px-6">
+<div class="container mx-auto">
+<h2 class="text-3xl font-light mb-6" data-aos="fade-up">Work</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- 1 -->
+<a class="artwork-item block" href="/new-gallery-1.html" data-aos="fade-up" data-aos-delay="100">
+<img src="Fresko0.jpg" alt="Deframed" class="w-full h-auto mb-3" />
+<h3 class="text-lg">Deframed</h3>
+</a>
+<!-- 2 -->
+<a class="artwork-item block" href="/new-gallery-2.html" data-aos="fade-up" data-aos-delay="200">
+<img src="Fresko2.jpg" alt="Nur für Kurze Zeit" class="w-full h-auto mb-3" />
+<h3 class="text-lg">Nur für Kurze Zeit</h3>
+</a>
+<!-- 3 -->
+<a class="artwork-item block" href="/new-gallery-3.html" data-aos="fade-up" data-aos-delay="300">
+<img src="http://static.photos/abstract/640x360/3" alt="Artwork 3" class="w-full h-auto mb-3" />
+<h3 class="text-lg">Artwork Title 3</h3>
+</a>
+<!-- 4 -->
+<a class="artwork-item block" href="/new-gallery-4.html" data-aos="fade-up" data-aos-delay="400">
+<img src="http://static.photos/abstract/640x360/4" alt="Artwork 4" class="w-full h-auto mb-3" />
+<h3 class="text-lg">Artwork Title 4</h3>
+</a>
+<!-- 5 -->
+<a class="artwork-item block" href="/new-gallery-5.html" data-aos="fade-up" data-aos-delay="500">
+<img src="http://static.photos/abstract/640x360/5" alt="Artwork 5" class="w-full h-auto mb-3" />
+<h3 class="text-lg">Artwork Title 5</h3>
+</a>
+<!-- 6 -->
+<a class="artwork-item block" href="/new-gallery-6.html" data-aos="fade-up" data-aos-delay="600">
+<img src="http://static.photos/abstract/640x360/6" alt="Artwork 6" class="w-full h-auto mb-3" />
+<h3 class="text-lg">Artwork Title 6</h3>
+</a>
+</div>
+</div>
+</section>
+</main>
 
-    <main>
-        <!-- Work Section -->
-        <section id="work" class="pt-32 pb-20 px-6">
-            <div class="container mx-auto">
-                <h2 class="text-3xl font-light mb-12" data-aos="fade-up">Work</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Artwork Items -->
-                    <div class="artwork-item" data-aos="fade-up" data-aos-delay="100"> 
-                        <img src="Fresko0.jpg" alt="Fresko0.jpg" class="w-full h-auto mb-4"> 
-                        <h3 class="text-lg">Deframed</h3>
-                       
-                    </div>
-                    <div class="artwork-item" data-aos="fade-up" data-aos-delay="200"> 
-                        <img src="Fresko2.jpg" alt="Fresko2.jpg" class="w-full h-auto mb-4"> 
-                        <h3 class="text-lg">Nur für Kurze Zeit</h3>
-                       
-                    </div>
-                    <div class="artwork-item" data-aos="fade-up" data-aos-delay="300"> 
-                        <img src="painting1.jpg" alt="painting1.jpg" class="w-full h-auto mb-4"> 
-                        <h3 class="text-lg">Aalborg</h3>
-                       
-                    </div>
-                    <div class="artwork-item" data-aos="fade-up" data-aos-delay="400"> 
-                        <img src="painting2.jpg" alt="painting2.jpg" class="w-full h-auto mb-4">
-                        <h3 class="text-lg">Artwork Title 4</h3>
-                       
-                    </div>
-                    <div class="artwork-item" data-aos="fade-up" data-aos-delay="500"> 
-                        <img src="painting3.jpg" alt="painting3.jpg" class="w-full h-auto mb-4">
-                        <h3 class="text-lg">Artwork Title 5</h3>
-                        <p class="text-gray-600">2023, Medium, Dimensions</p>
-                    </div>
-                    <div class="artwork-item" data-aos="fade-up" data-aos-delay="600"> 
-                        <img src="painting4.jpg" alt="painting4.jpg" class="w-full h-auto mb-4">
-                        <h3 class="text-lg">Artwork Title 6</h3>
-                       
-                    </div>
-                </div>
-            </div>
-        </section>
 
-        <!-- Shows Section -->
-        <section id="shows" class="py-20 px-6">
-            <div class="container mx-auto">
-                <h2 class="text-3xl font-light mb-12" data-aos="fade-up">Current & Upcoming Shows</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div class="border-b border-gray-200 pb-8" data-aos="fade-up">
-                        <h3 class="text-xl font-medium mb-2">Current Exhibition</h3>
-                        <p class="text-gray-600 mb-2">Gallery Name, Location</p>
-                        <p class="mb-4">January 15 - March 30, 2024</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    </div>
-                    <div class="border-b border-gray-200 pb-8" data-aos="fade-up" data-aos-delay="100">
-                        <h3 class="text-xl font-medium mb-2">Upcoming Exhibition</h3>
-                        <p class="text-gray-600 mb-2">Museum Name, Location</p>
-                        <p class="mb-4">May 10 - August 25, 2024</p>
-                        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                    </div>
-                    <div class="border-b border-gray-200 pb-8" data-aos="fade-up" data-aos-delay="200">
-                        <h3 class="text-xl font-medium mb-2">Group Show</h3>
-                        <p class="text-gray-600 mb-2">Art Space, Location</p>
-                        <p class="mb-4">September 5 - November 15, 2024</p>
-                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-                    </div>
-                    <div class="border-b border-gray-200 pb-8" data-aos="fade-up" data-aos-delay="300">
-                        <h3 class="text-xl font-medium mb-2">Solo Show</h3>
-                        <p class="text-gray-600 mb-2">Contemporary Gallery, Location</p>
-                        <p class="mb-4">December 1, 2024 - January 31, 2025</p>
-                        <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+<footer class="bg-black text-white py-12 px-6 mt-20">
+<div class="container mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-center">
+<div class="mb-6 md:mb-0">
+<h2 class="text-xl font-medium">EMIL KJERRMAN</h2>
+<p class="text-gray-400 mt-2">© <span id="year"></span> All rights reserved</p>
+</div>
+<div>
+<ul class="flex space-x-6">
+<li><a href="/work.html" class="hover:text-gray-400 transition">Work</a></li>
+<li><a href="/about.html" class="hover:text-gray-400 transition">About</a></li>
+<li><a href="/shows.html" class="hover:text-gray-400 transition">Shows</a></li>
+<li><a href="/contact.html" class="hover:text-gray-400 transition">Contact</a></li>
+</ul>
+</div>
+</div>
+</div>
+</footer>
 
-        <!-- Contact Section -->
-        <section id="contact" class="py-20 px-6 bg-gray-50">
-            <div class="container mx-auto">
-                <h2 class="text-3xl font-light mb-12" data-aos="fade-up">Contact</h2>
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                    <div data-aos="fade-right">
-                        <h3 class="text-xl font-medium mb-6">Get in Touch</h3>
-                        <form class="space-y-6">
-                            <div>
-                                <label for="name" class="block mb-2">Name</label>
-                                <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 focus:outline-none focus:border-black">
-                            </div>
-                            <div>
-                                <label for="email" class="block mb-2">Email</label>
-                                <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 focus:outline-none focus:border-black">
-                            </div>
-                            <div>
-                                <label for="message" class="block mb-2">Message</label>
-                                <textarea id="message" rows="5" class="w-full px-4 py-2 border border-gray-300 focus:outline-none focus:border-black"></textarea>
-                            </div>
-                            <button type="submit" class="px-6 py-3 bg-black text-white hover:bg-gray-800 transition">Send Message</button>
-                        </form>
-                    </div>
-                    <div data-aos="fade-left">
-                        <h3 class="text-xl font-medium mb-6">Contact Information</h3>
-                        <div class="space-y-4">
-                            <div class="flex items-start">
-                                <i data-feather="mail" class="mr-4 mt-1"></i>
-                                <span>artist@email.com</span>
-                            </div>
-                            <div class="flex items-start">
-                                <i data-feather="phone" class="mr-4 mt-1"></i>
-                                <span>+1 (123) 456-7890</span>
-                            </div>
-                            <div class="flex items-start">
-                                <i data-feather="map-pin" class="mr-4 mt-1"></i>
-                                <span>Studio Address, City, Country</span>
-                            </div>
-                        </div>
-                        <div class="mt-8">
-                            <h4 class="text-lg font-medium mb-4">Follow</h4>
-                            <div class="flex space-x-4">
-                                <a href="#" class="hover:text-gray-600 transition"><i data-feather="instagram"></i></a>
-                                <a href="#" class="hover:text-gray-600 transition"><i data-feather="facebook"></i></a>
-                                <a href="#" class="hover:text-gray-600 transition"><i data-feather="twitter"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
 
-    <footer class="bg-black text-white py-12 px-6">
-        <div class="container mx-auto">
-            <div class="flex flex-col md:flex-row justify-between items-center">
-                <div class="mb-6 md:mb-0">
-                    <h2 class="text-xl font-medium">ARTIST NAME</h2>
-                    <p class="text-gray-400 mt-2">© 2024 All rights reserved</p>
-                </div>
-                <div>
-                    <ul class="flex space-x-6">
-                        <li><a href="#work" class="hover:text-gray-400 transition">Work</a></li>
-                        <li><a href="#about" class="hover:text-gray-400 transition">About</a></li>
-                        <li><a href="#shows" class="hover:text-gray-400 transition">Shows</a></li>
-                        <li><a href="#contact" class="hover:text-gray-400 transition">Contact</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        AOS.init({
-            duration: 800,
-            easing: 'ease-in-out',
-            once: true
-        });
-        feather.replace();
-        
-        // Update active nav link on scroll
-        const sections = document.querySelectorAll('section');
-        const navLinks = document.querySelectorAll('.nav-link');
-        
-        window.addEventListener('scroll', () => {
-            let current = '';
-            
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                
-                if (pageYOffset >= (sectionTop - 300)) {
-                    current = section.getAttribute('id');
-                }
-            });
-            
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === `#${current}`) {
-                    link.classList.add('active');
-                }
-            });
-        });
-    </script>
+<script>
+AOS.init({ duration: 800, easing: 'ease-in-out', once: true });
+feather.replace();
+document.getElementById('year').textContent = new Date().getFullYear();
+// mark current page in nav
+const path = location.pathname.replace(/\/?$/, '/');
+document.querySelectorAll('.nav-link').forEach(a => {
+const href = new URL(a.href).pathname.replace(/\/?$/, '/');
+if (href === path) a.classList.add('active');
+});
+</script>
 </body>
 </html>
