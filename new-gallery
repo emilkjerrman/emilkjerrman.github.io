@@ -41,19 +41,19 @@
 <a href="/work.html" class="inline-flex items-center text-sm hover:underline"><i data-feather="arrow-left" class="mr-2"></i>Back to Work</a>
 <nav class="text-sm space-x-2">
 <!-- update the active one per page -->
-<a href="/new-gallery-1.html" class="hover:underline">1</a>
-<a href="/new-gallery-2.html" class="hover:underline">2</a>
-<a href="/new-gallery-3.html" class="hover:underline">3</a>
-<a href="/new-gallery-4.html" class="hover:underline">4</a>
-<a href="/new-gallery-5.html" class="hover:underline">5</a>
-<a href="/new-gallery-6.html" class="hover:underline">6</a>
+<a href="/new-gallery.html" class="hover:underline">1</a>
+<a href="/new-gallery-1.html" class="hover:underline">2</a>
+<a href="/new-gallery-2.html" class="hover:underline">3</a>
+<a href="/new-gallery-3.html" class="hover:underline">4</a>
+<a href="/new-gallery-4.html" class="hover:underline">5</a>
+<a href="/new-gallery-5.html" class="hover:underline">6</a>
 </nav>
 </div>
 
 
 <header class="mb-10" data-aos="fade-up">
-<h1 class="text-3xl font-light">Series Title</h1>
-<p class="text-gray-600 mt-2">Year, medium, dimensions — short blurb about the series.</p>
+<title>Deframed — Emil Kjerrman</title>
+<h1 class="text-3xl font-light">Deframed</h1>
 </header>
 
 
@@ -61,11 +61,7 @@
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 <!-- Replace with your images; duplicate as needed -->
 <a href="#" class="block thumb" data-aos="fade-up"><img src="Fresko0.jpg" alt="Fresko0.jpg" class="w-full h-auto" /></a>
-<a href="#" class="block thumb" data-aos="fade-up" data-aos-delay="50"><img src="http://static.photos/abstract/960x640/2" alt="Work 2" class="w-full h-auto" /></a>
-<a href="#" class="block thumb" data-aos="fade-up" data-aos-delay="100"><img src="http://static.photos/abstract/960x640/3" alt="Work 3" class="w-full h-auto" /></a>
-<a href="#" class="block thumb" data-aos="fade-up" data-aos-delay="150"><img src="http://static.photos/abstract/960x640/4" alt="Work 4" class="w-full h-auto" /></a>
-<a href="#" class="block thumb" data-aos="fade-up" data-aos-delay="200"><img src="http://static.photos/abstract/960x640/5" alt="Work 5" class="w-full h-auto" /></a>
-<a href="#" class="block thumb" data-aos="fade-up" data-aos-delay="250"><img src="http://static.photos/abstract/960x640/6" alt="Work 6" class="w-full h-auto" /></a>
+<a href="#" class="block thumb" data-aos="fade-up" data-aos-delay="50"><img src="Fresko1" alt="Fresko2" class="w-full h-auto" /></a>
 </div>
 
 
