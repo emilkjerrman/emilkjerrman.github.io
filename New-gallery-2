@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Series Title — Emil Kjerrman</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="https://unpkg.com/feather-icons"></script>
+<style>
+.thumb { transition: transform .2s ease; }
+.thumb:hover { transform: scale(1.02); }
+.nav-link { position: relative; }
+.nav-link:after { content: ''; position: absolute; width: 0; height: 1px; bottom: 0; left: 0; background-color: currentColor; transition: width 0.3s ease; }
+.nav-link:hover:after, .active:after { width: 100%; }
+</style>
+</head>
+<body class="bg-white text-gray-900 font-sans">
+<header class="fixed top-0 left-0 right-0 bg-white z-50 shadow-sm">
+<div class="container mx-auto px-6 py-4">
+<div class="flex justify-between items-center">
+<a href="/index.html" class="text-xl font-medium">EMIL KJERRMAN</a>
+<nav class="hidden md:block">
+<ul class="flex space-x-8">
+<li><a href="/work.html" class="nav-link">WORK</a></li>
+<li><a href="/about.html" class="nav-link">ABOUT</a></li>
+<li><a href="/shows.html" class="nav-link">UPCOMING AND CURRENT SHOWS</a></li>
+<li><a href="/contact.html" class="nav-link">CONTACT</a></li>
+</ul>
+</nav>
+<button class="md:hidden" aria-label="Open menu"><i data-feather="menu"></i></button>
+</div>
+</div>
+</header>
+
+
+<main class="pt-28 px-6">
+<div class="container mx-auto">
+<div class="flex items-center justify-between mb-6">
+<a href="/work.html" class="inline-flex items-center text-sm hover:underline"><i data-feather="arrow-left" class="mr-2"></i>Back to Work</a>
+<nav class="text-sm space-x-2">
+<!-- update the active one per page -->
+<a href="/new-gallery.html" class="hover:underline">1</a>
+<a href="/new-gallery-1.html" class="hover:underline">2</a>
+<a href="/new-gallery-2.html" class="hover:underline">3</a>
+<a href="/new-gallery-3.html" class="hover:underline">4</a>
+<a href="/new-gallery-4.html" class="hover:underline">5</a>
+<a href="/new-gallery-5.html" class="hover:underline">6</a>
+</nav>
+</div>
+
+
+<header class="mb-10" data-aos="fade-up">
+<title>Artwork Series 3 — Emil Kjerrman</title>
+<h1 class="text-3xl font-light">Artwork Series 3</h1>
+<p class="text-gray-600 mt-2">Year, medium, dimensions — short blurb about the series.</p>
+</header>
+
+
+<!-- Gallery Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Replace with your images; duplicate as needed -->
+<a href="#" class="block thumb" data-aos="fade-up"><img src="painting1.jpg" alt="painting1.jpg" class="w-full h-auto" /></a>
+</html>
