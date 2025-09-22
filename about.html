@@ -1,47 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>About — Emil Kjerrman</title>
-  <link rel="stylesheet" href="style.css" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>About — Emil Kjerrman</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="https://unpkg.com/feather-icons"></script>
+<style>
+.nav-link { position: relative; }
+.nav-link:after { content: ''; position: absolute; width: 0; height: 1px; bottom: 0; left: 0; background-color: currentColor; transition: width 0.3s ease; }
+.nav-link:hover:after, .active:after { width: 100%; }
+</style>
 </head>
-<body>
-  <div class="wrap">
+<body class="bg-white text-gray-900 font-sans">
+<header class="fixed top-0 left-0 right-0 bg-white z-50 shadow-sm">
+<div class="container mx-auto px-6 py-4">
+<div class="flex justify-between items-center">
+<a href="/index.html" class="text-xl font-medium">EMIL KJERRMAN</a>
+<nav class="hidden md:block">
+<ul class="flex space-x-8">
+<li><a href="/work.html" class="nav-link">Work</a></li>
+<li><a href="/about.html" class="nav-link">About</a></li>
+<li><a href="/shows.html" class="nav-link">Shows</a></li>
+<li><a href="/contact.html" class="nav-link">Contact</a></li>
+</ul>
+</nav>
+<button class="md:hidden" aria-label="Open menu"><i data-feather="menu"></i></button>
+</div>
+</div>
+</header>
 
-    <aside>
-      <div class="name"><a href="index.html" style="text-decoration:none">Emil Kjerrman</a></div>
-      <div class="bio">Painter based in Leipzig. Selected works, projects, and exhibition updates.</div>
-      <nav>
-        <ul>
-          <li><a href="works.html" class="">Works</a></li>
-          <li><a href="about.html" class="active">About</a></li>
-          <li><a href="contact.html" class="">Contact</a></li>
-          <li><a href="https://instagram.com/YOURHANDLE" target="_blank" rel="noopener">Instagram ↗</a></li>
-        </ul>
-      </nav>
-      <div class="meta">© <span id="y"></span> Emil Kjerrman</div>
-    </aside>
 
-    <main>
+<main class="pt-28 px-6">
+<div class="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+<div data-aos="fade-right">
+<img src="http://static.photos/people/640x360/1" alt="Artist portrait" class="w-full h-auto rounded" />
+</div>
+<article data-aos="fade-left">
+<h1 class="text-3xl font-light mb-6">About</h1>
+<p class="mb-6 text-lg leading-relaxed">Write your bio here. You can keep the voice simple and factual. Mention series, process, mediums, and interests.</p>
+<p class="mb-6 text-lg leading-relaxed">Add CV highlights if you like — education, residencies, awards. Keep lines short for readability.</p>
+<p class="text-lg leading-relaxed">Download CV: <a href="#" class="underline">PDF</a></p>
+</article>
+</div>
+</main>
 
-  <section id="about">
-    <h2 class="section-title">About</h2>
-    <div class="stack">
-      <p><strong>Emil Kjerrman</strong> (b. …) is a painter based in Leipzig and a student at the Hochschule für Grafik und Buchkunst (HGB Leipzig). His work explores [themes], examining material behaviour, memory, and image construction through layered colour and surface.</p>
-      <div>
-        <strong>Selected CV</strong>
-        <ul>
-          <li>2023–present — Studies at HGB Leipzig</li>
-          <li>2025 — Group exhibition, [gallery/project space]</li>
-          <li>2024 — Pop-up student show, Leipzig</li>
-        </ul>
-      </div>
-    </div>
-  </section>
 
-    </main>
-  </div>
-  <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
-</body>
+<footer class="bg-black text-white py-12 px-6 mt-20">
+<div class="container mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-center">
+<div class="mb-6 md:mb-0">
+<h2 class="text-xl font-medium">EMIL KJERRMAN</h2>
+<p class="text-gray-400 mt-2">© <span id="year"></span> All rights reserved</p>
+</div>
+<div>
+<ul class="flex space-x-6">
+<li><a href="/work.html" class="hover:text-gray-400 transition">Work</a></li>
+<li><a href="/about.html" class="hover:text-gray-400 transition">About</a></li>
+<li><a href="/shows.html" class="hover:text-gray-400 transition">Shows</a></li>
+<li><a href="/contact.html" class="hover:text-gray-400 transition">Contact</a></li>
+</ul>
+</div>
+</div>
+</div>
+</footer>
+
+
+<script>
 </html>
