@@ -1,78 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Series Title — Emil Kjerrman</title>
-<script src="https://cdn.tailwindcss.com"></script>
-<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script src="https://unpkg.com/feather-icons"></script>
-<style>
-.thumb { transition: transform .2s ease; }
-.thumb:hover { transform: scale(1.02); }
-.nav-link { position: relative; }
-.nav-link:after { content: ''; position: absolute; width: 0; height: 1px; bottom: 0; left: 0; background-color: currentColor; transition: width 0.3s ease; }
-.nav-link:hover:after, .active:after { width: 100%; }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exhibition Title 1 | Artist Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <style>
+        .gallery-item {
+            transition: all 0.3s ease;
+        }
+        .gallery-item:hover {
+            transform: scale(0.98);
+        }
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1rem;
+        }
+        @media (max-width: 768px) {
+            .grid-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
-<body class="bg-white text-gray-900 font-sans">
-<header class="fixed top-0 left-0 right-0 bg-white z-50 shadow-sm">
-<div class="container mx-auto px-6 py-4">
-<div class="flex justify-between items-center">
-<a href="/index.html" class="text-xl font-medium">EMIL KJERRMAN</a>
-<nav class="hidden md:block">
-<ul class="flex space-x-8">
-<li><a href="/WORK.html" class="nav-link">Work</a></li>
-<li><a href="/ABOUT.html" class="nav-link">About</a></li>
-<li><a href="/CURRENT AND UPCOMING SHOWS.html" class="nav-link">Shows</a></li>
-<li><a href="/CONTACT.html" class="nav-link">Contact</a></li>
-</ul>
-</nav>
-<button class="md:hidden" aria-label="Open menu"><i data-feather="menu"></i></button>
-</div>
-</div>
-</header>
+<body class="bg-gray-100 font-sans">
+    <header class="py-6 px-4 md:px-8">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold">ARTIST NAME</a>
+            <nav>
+                <ul class="flex space-x-6">
+                    <li><a href="#" class="hover:text-gray-600">About</a></li>
+                    <li><a href="#" class="hover:text-gray-600">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
+    <main class="py-12 px-4 md:px-8">
+        <div class="container mx-auto">
+            <div class="mb-12">
+                <h1 class="text-4xl font-light mb-2">Exhibition Title 1</h1>
+                <p class="text-gray-600">2023 • Gallery Name, Location</p>
+                <p class="mt-4 max-w-2xl">Description of the exhibition. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+            
+            <div class="grid-container">
+                <div class="gallery-item" data-aos="fade-up">
+                    <img src="http://static.photos/art/1200x630/11" alt="Artwork 1" class="w-full h-auto object-cover">
+                </div>
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="100">
+                    <img src="http://static.photos/art/1200x630/12" alt="Artwork 2" class="w-full h-auto object-cover">
+                </div>
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="200">
+                    <img src="http://static.photos/art/1200x630/13" alt="Artwork 3" class="w-full h-auto object-cover">
+                </div>
+                <div class="gallery-item" data-aos="fade-up">
+                    <img src="http://static.photos/art/1200x630/14" alt="Artwork 4" class="w-full h-auto object-cover">
+                </div>
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="100">
+                    <img src="http://static.photos/art/1200x630/15" alt="Artwork 5" class="w-full h-auto object-cover">
+                </div>
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="200">
+                    <img src="http://static.photos/art/1200x630/16" alt="Artwork 6" class="w-full h-auto object-cover">
+                </div>
+            </div>
+        </div>
+    </main>
 
-<main class="pt-28 px-6">
-<div class="container mx-auto">
-<div class="flex items-center justify-between mb-6">
-<a href="/work.html" class="inline-flex items-center text-sm hover:underline"><i data-feather="arrow-left" class="mr-2"></i>Back to Work</a>
-<nav class="text-sm space-x-2">
-<!-- update the active one per page -->
-<a href="/new-gallery.html" class="hover:underline">1</a>
-<a href="/new-gallery-1.html" class="hover:underline">2</a>
-<a href="/new-gallery-2.html" class="hover:underline">3</a>
-<a href="/new-gallery-3.html" class="hover:underline">4</a>
-<a href="/new-gallery-4.html" class="hover:underline">5</a>
-<a href="/new-gallery-5.html" class="hover:underline">6</a>
-</nav>
-</div>
+    <footer class="py-8 px-4 md:px-8 bg-gray-900 text-white">
+        <div class="container mx-auto text-center">
+            <p>© 2023 Artist Name. All rights reserved.</p>
+            <div class="flex justify-center space-x-4 mt-4">
+                <a href="#" class="hover:text-gray-400"><i data-feather="instagram"></i></a>
+                <a href="#" class="hover:text-gray-400"><i data-feather="twitter"></i></a>
+                <a href="#" class="hover:text-gray-400"><i data-feather="facebook"></i></a>
+            </div>
+        </div>
+    </footer>
 
-
-<header class="mb-10" data-aos="fade-up">
-<title>Deframed — Emil Kjerrman</title>
-<h1 class="text-3xl font-light">Deframed</h1>
-</header>
-
-
-<!-- Gallery Grid -->
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-<!-- Replace with your images; duplicate as needed -->
-<a href="#" class="block thumb" data-aos="fade-up"><img src="Fresko0.jpg" alt="Fresko0.jpg" class="w-full h-auto" /></a>
-<a href="#" class="block thumb" data-aos="fade-up" data-aos-delay="50"><img src="Fresko1" alt="Fresko2" class="w-full h-auto" /></a>
-</div>
-
-
-<!-- Prev / Next -->
-<div class="flex justify-between items-center mt-12">
-<a id="prevLink" href="#" class="inline-flex items-center hover:underline"><i data-feather="chevron-left" class="mr-1"></i>Previous</a>
-<a id="nextLink" href="#" class="inline-flex items-center hover:underline">Next<i data-feather="chevron-right" class="ml-1"></i></a>
-</div>
-</div>
-</main>
-
-
-<footer class="bg-black text-white py-12 px-6 mt-20">
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+        feather.replace();
+    </script>
+</body>
 </html>
+
