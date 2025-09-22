@@ -1,40 +1,61 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Contact — Emil Kjerrman</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <div class="wrap">
+<div>
+<label for="message" class="block mb-2">Message</label>
+<textarea id="message" name="message" rows="5" class="w-full px-4 py-2 border border-gray-300 focus:outline-none focus:border-black" required></textarea>
+</div>
+<button type="submit" class="px-6 py-3 bg-black text-white hover:bg-gray-800 transition">Send</button>
+</form>
+<p class="text-sm text-gray-500 mt-3">This form uses <code>mailto:</code>. For a custom backend (Node/PHPMailer), tell me your host and I'll wire it up.</p>
+</div>
+<aside data-aos="fade-left">
+<h2 class="text-xl font-medium mb-6">Contact Information</h2>
+<div class="space-y-4">
+<div class="flex items-start"><i data-feather="mail" class="mr-4 mt-1"></i><span>artist@email.com</span></div>
+<div class="flex items-start"><i data-feather="phone" class="mr-4 mt-1"></i><span>+1 (123) 456-7890</span></div>
+<div class="flex items-start"><i data-feather="map-pin" class="mr-4 mt-1"></i><span>Studio Address, City, Country</span></div>
+</div>
+<div class="mt-8">
+<h3 class="text-lg font-medium mb-4">Follow</h3>
+<div class="flex space-x-4">
+<a href="#" class="hover:text-gray-600 transition" aria-label="Instagram"><i data-feather="instagram"></i></a>
+<a href="#" class="hover:text-gray-600 transition" aria-label="Facebook"><i data-feather="facebook"></i></a>
+<a href="#" class="hover:text-gray-600 transition" aria-label="Twitter"><i data-feather="twitter"></i></a>
+</div>
+</div>
+</aside>
+</div>
+</main>
 
-    <aside>
-      <div class="name"><a href="index.html" style="text-decoration:none">Emil Kjerrman</a></div>
-      <div class="bio">Painter based in Leipzig. Selected works, projects, and exhibition updates.</div>
-      <nav>
-        <ul>
-          <li><a href="works.html" class="">Works</a></li>
-          <li><a href="about.html" class="">About</a></li>
-          <li><a href="contact.html" class="active">Contact</a></li>
-          <li><a href="https://instagram.com/YOURHANDLE" target="_blank" rel="noopener">Instagram ↗</a></li>
-        </ul>
-      </nav>
-      <div class="meta">© <span id="y"></span> Emil Kjerrman</div>
-    </aside>
 
-    <main>
+<footer class="bg-black text-white py-12 px-6 mt-20">
+<div class="container mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-center">
+<div class="mb-6 md:mb-0">
+<h2 class="text-xl font-medium">EMIL KJERRMAN</h2>
+<p class="text-gray-400 mt-2">© <span id="year"></span> All rights reserved</p>
+</div>
+<div>
+<ul class="flex space-x-6">
+<li><a href="/work.html" class="hover:text-gray-400 transition">Work</a></li>
+<li><a href="/about.html" class="hover:text-gray-400 transition">About</a></li>
+<li><a href="/shows.html" class="hover:text-gray-400 transition">Shows</a></li>
+<li><a href="/contact.html" class="hover:text-gray-400 transition">Contact</a></li>
+</ul>
+</div>
+</div>
+</div>
+</footer>
 
-  <section id="contact">
-    <h2 class="section-title">Contact</h2>
-    <div class="stack">
-      <p>Email: <a href="mailto:emil@kjerrman.dk">emil@kjerrman.dk</a></p>
-      <p>Instagram: <a href="https://instagram.com/YOURHANDLE" target="_blank" rel="noopener">@YOURHANDLE</a></p>
-    </div>
-  </section>
 
-    </main>
-  </div>
-  <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+<script>
+AOS.init({ duration: 800, easing: 'ease-in-out', once: true });
+feather.replace();
+document.getElementById('year').textContent = new Date().getFullYear();
+const path = location.pathname.replace(/\/?$/, '/');
+document.querySelectorAll('.nav-link').forEach(a => {
+const href = new URL(a.href).pathname.replace(/\/?$/, '/');
+if (href === path) a.classList.add('active');
+});
+</script>
 </body>
 </html>
