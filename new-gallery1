@@ -42,12 +42,12 @@
 <a href="/work.html" class="inline-flex items-center text-sm hover:underline"><i data-feather="arrow-left" class="mr-2"></i>Back to Work</a>
 <nav class="text-sm space-x-2">
 <!-- update the active one per page -->
-<a href="/new-gallery-1.html" class="hover:underline">1</a>
-<a href="/new-gallery-2.html" class="hover:underline">2</a>
-<a href="/new-gallery-3.html" class="hover:underline">3</a>
-<a href="/new-gallery-4.html" class="hover:underline">4</a>
-<a href="/new-gallery-5.html" class="hover:underline">5</a>
-<a href="/new-gallery-6.html" class="hover:underline">6</a>
+<a href="/new-gallery.html" class="hover:underline">1</a>
+<a href="/new-gallery-1.html" class="hover:underline">2</a>
+<a href="/new-gallery-2.html" class="hover:underline">3</a>
+<a href="/new-gallery-3.html" class="hover:underline">4</a>
+<a href="/new-gallery-4.html" class="hover:underline">5</a>
+<a href="/new-gallery-5.html" class="hover:underline">6</a>
 </nav>
 </div>
 
