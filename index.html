@@ -44,28 +44,6 @@
             }
         }
     </style>
-    .grid-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 1rem;
-}
-
-/* Mobil: 1 kolonne */
-@media (max-width: 768px) {
-  .grid-container {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* Ens størrelse på alle billeder */
-.grid-container img {
-  width: 100%;
-  height: 200px;      /* fast højde – kan justeres */
-  object-fit: cover;  /* beskær så de passer i boksen */
-  display: block;
-  border-radius: 6px; /* valgfri afrunding */
-}
-
 </head>
 <body class="bg-gray-100 font-sans">
     <header class="py-6 px-4 md:px-8">
@@ -73,21 +51,55 @@
             <h1 class="text-2xl font-bold">Emil Kjerrman</h1>
             <nav>
                 <ul class="flex space-x-6">
-                    <li><a href="#" class="hover:text-gray-600">About</a></li>
-                    <li><a href="#" class="hover:text-gray-600">Contact</a></li>
+                    <li><a href="#" class="hover:text-gray-600">WORKS</a></li>
+                    <li><a href="#" class="hover:text-gray-600">ABOUT</a></li>
+                    <li><a href="#" class="hover:text-gray-600">UPCOMING AND CURRENT SHOWS</a></li>
+                                        <li><a href="#" class="hover:text-gray-600">CONTACT</a></li>
+                    
                 </ul>
             </nav>
         </div>
     </header>
+    <style>
+  /* Grid på forsiden */
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr)); /* 3 kolonner */
+    gap: 20px;                                         /* hvid plads imellem */
+    max-width: 1100px;
+    margin: 2rem auto;
+  }
 
-    <main class="py-12 px-4 md:px-8">
-        <div class="container mx-auto">
-            <h2 class="text-3xl font-light mb-12 text-center"></h2>
+  /* Ens billedstørrelse via aspect-ratio (responsivt og pænt) */
+  .thumb-box {
+    aspect-ratio: 4 / 3;   /* vælg 1/1, 4/3, 16/9 – hvad du vil */
+    width: 100%;
+    overflow: hidden;
+    border-radius: 8px;     /* valgfri afrunding */
+  }
+  .thumb-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;      /* gør alle thumbnails ens uden at strække */
+    display: block;
+  }
+
+  /* Mobil: 1 kolonne (justér hvis du vil have 2) */
+  @media (max-width: 768px) {
+    .grid-container {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+   /* <main class="py-12 px-4 md:px-8"> */
+        /* <div class="container mx-auto"> */
+           /* <h2 class="text-3xl font-light mb-12 text-center"></h2> */
 
              <!-- Project 1 -->
         <div class="grid-container" style="position:relative">
   <a href="/new-gallery.html" class="project-item" style="display:block; position:relative; z-index:10; pointer-events:auto">
-    <img src="/images/Fresko0.jpg" alt="Exhibition 1" class="w-full h-auto object-cover" style="display:block; max-width:100%;">
+    <img src="/images/Fresko0.jpg" alt="Exhibition 1"  style="display:block">
   </a>
 </div>
                
@@ -96,7 +108,7 @@
                 
                 <!-- Project 2 -->
                <a href="/new-gallery.html" class="project-item" style="display:block; position:relative; z-index:10; pointer-events:auto">
-                    <img src="./images/Fresko2.jpg" alt="Fresko0.jpg" class="w-full h-auto object-cover">
+                    <img src="./images/Fresko2.jpg" alt="Fresko0.jpg" 
                     <div class="project-overlay">
                         <h3 class="text-xl">Nur Für Kurze Zeit</h3>
                     </div>
@@ -104,27 +116,27 @@
                 
                 <!-- Project 3 -->
                 <a href="painting1.jpg" class="project-item" 
-                    <img src="./images/painting1.jpg" alt="Exhibition 3" class="w-full h-auto object-cover">
+                    <img src="./images/painting1.jpg" alt="Exhibition 3" 
                     <div class="project-overlay">
-                        <h3 class="text-xl">Exhibition Title 3</h3>
+                        
                     </div>
                 </a>
                 
                 <!-- Project 4 -->
                 <a href="new-gallery3.html" class="project-item" 
-                    <img src="./images/painting2.jpg" alt="Exhibition 4" class="w-full h-auto object-cover">
+                    <img src="./images/painting2.jpg" alt="Exhibition 4" 
                     </div>
                 </a>
                 
                 <!-- Project 5 -->
                 <a href="new-gallery4.html" class="project-item" 
-                    <img src="./images/painting3.jpg" alt="painting3.jpg" class="w-full h-auto object-cover">   
+                    <img src="./images/painting3.jpg" alt="Exhibition 4"   
                     </div>
                 </a>
                 
                 <!-- Project 6 -->
                 <a href="new-gallery5.html" class="project-item" 
-                    <img src="./images/" alt="Exhibition 6" class="w-full h-auto object-cover">
+                    <img src="./images/" alt="Exhibition 6" 
                     <div class="project-overlay">
                         <h3 class="text-xl">Exhibition Title 6</h3>
                         <p class="text-sm">2018 • Gallery Name</p>
@@ -133,6 +145,43 @@
             </div>
         </div>
     </main>
+<div class="grid-container">
+  <a href="new-gallery1.html" class="project-item">
+    <div class="thumb-box">
+      <img src="/images/Fresko0.jpg" alt="Exhibition 1">
+    </div>
+  </a>
+
+  <a href="new-gallery2.html" class="project-item">
+    <div class="thumb-box">
+      <img src="/images/Fresko1.jpg" alt="Exhibition 2">
+    </div>
+  </a>
+
+  <a href="new-gallery3.html" class="project-item">
+    <div class="thumb-box">
+      <img src="/images/Fresko2.jpg" alt="Exhibition 3">
+    </div>
+  </a>
+
+  <a href="new-gallery4.html" class="project-item">
+    <div class="thumb-box">
+      <img src="/images/Fresko3.jpg" alt="Exhibition 4">
+    </div>
+  </a>
+
+  <a href="new-gallery5.html" class="project-item">
+    <div class="thumb-box">
+      <img src="/images/Fresko4.jpg" alt="Exhibition 5">
+    </div>
+  </a>
+
+  <a href="new-gallery6.html" class="project-item">
+    <div class="thumb-box">
+      <img src="/images/Fresko5.jpg" alt="Exhibition 6">
+    </div>
+  </a>
+</div>
 
     <footer class="py-8 px-4 md:px-8 bg-gray-900 text-white">
         <div class="container mx-auto text-center">
