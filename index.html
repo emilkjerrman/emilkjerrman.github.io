@@ -51,6 +51,13 @@
 }
 
   </style>
+  /* Skjul billeder, hvor src mangler eller er tomt */
+.thumb-box img:not([src]),
+.thumb-box img[src=""],
+.thumb-box img[src="/images/.jpg"] {
+  display: none;
+}
+
 </head>
 
 <body class="bg-gray-100 font-sans">
@@ -91,12 +98,12 @@
 
   <div>
     <a href="new-gallery2.html" class="project-item">
-      /* Skjul billeder, hvor src mangler eller er tomt */
-.thumb-box img:not([src]),
-.thumb-box img[src=""],
-.thumb-box img[src="/images/.jpg"] {
-  display: none;
-}
+ <div class="thumb-box">
+        <img src="" alt="">
+      </div>
+    </a>
+    <div class="caption"></div>
+  </div>
    
 
   <div>
@@ -119,15 +126,12 @@
 
   <div>
     <a href="new-gallery5.html" class="project-item">
+   <div class="thumb-box">
+        <img src="" alt="">
       </div>
-        /* Skjul billeder, hvor src mangler eller er tomt */
-.thumb-box img:not([src]),
-.thumb-box img[src=""],
-.thumb-box img[src="/images/.jpg"] {
-  display: none;
-}
     </a>
     <div class="caption"></div>
+  </div>
   </div>
 </div>
 
