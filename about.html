@@ -1,72 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>About — Emil Kjerrman</title>
-<script src="https://cdn.tailwindcss.com"></script>
-<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script src="https://unpkg.com/feather-icons"></script>
-<style>
-.nav-link { position: relative; }
-.nav-link:after { content: ''; position: absolute; width: 0; height: 1px; bottom: 0; left: 0; background-color: currentColor; transition: width 0.3s ease; }
-.nav-link:hover:after, .active:after { width: 100%; }
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About — Emil Kjerrman</title>
+  <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+  <style>
+    .grid-container { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:20px; max-width:900px; margin:2rem auto; }
+    @media (max-width:768px){ .grid-container{ grid-template-columns:1fr; } }
+  </style>
 </head>
-<body class="bg-white text-gray-900 font-sans">
-<header class="fixed top-0 left-0 right-0 bg-white z-50 shadow-sm">
-<div class="container mx-auto px-6 py-4">
-<div class="flex justify-between items-center">
-<a href="/index.html" class="text-xl font-medium">EMIL KJERRMAN</a>
-<nav class="hidden md:block">
-<ul class="flex space-x-8">
-<li><a href="/work.html" class="nav-link">Work</a></li>
-<li><a href="/about.html" class="nav-link">About</a></li>
-<li><a href="/shows.html" class="nav-link">Shows</a></li>
-<li><a href="/contact.html" class="nav-link">Contact</a></li>
-</ul>
-</nav>
-<button class="md:hidden" aria-label="Open menu"><i data-feather="menu"></i></button>
-</div>
-</div>
-</header>
+<body class="bg-gray-100 font-sans">
+  <header class="py-6 px-4 md:px-8">
+    <div class="container mx-auto flex justify-between items-center">
+      <h1 class="text-2xl font-bold"><a href="/">Emil Kjerrman</a></h1>
+      <nav>
+        <ul class="flex space-x-6">
+          <li><a href="/works.html" class="hover:text-gray-600">WORKS</a></li>
+          <li><a href="/about.html" class="hover:text-gray-600">ABOUT</a></li>
+          <li><a href="/shows.html" class="hover:text-gray-600">UPCOMING AND CURRENT SHOWS</a></li>
+          <li><a href="/contact.html" class="hover:text-gray-600">CONTACT</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
+  <main class="py-12 px-4 md:px-8">
+    <div class="container mx-auto max-w-3xl">
+      <h2 class="text-xl font-semibold mb-6 text-center">About</h2>
+      <div class="prose prose-zinc max-w-none leading-relaxed">
+        <p>
+          Short bio/statement her. Skriv om praksis, materialer, motiver og udstillinger.
+          Hold det i 1–2 afsnit for læsbarhed.
+        </p>
+        <p class="mt-6">
+          CV (uddrag):<br/>
+          — 2025: Solo show, Venue X<br/>
+          — 2024: Group show, Venue Y<br/>
+          — Education: …
+        </p>
+      </div>
+    </div>
+  </main>
 
-<main class="pt-28 px-6">
-<div class="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-<div data-aos="fade-right">
-<img src="http://static.photos/people/640x360/1" alt="Artist portrait" class="w-full h-auto rounded" />
-</div>
-<article data-aos="fade-left">
-<h1 class="text-3xl font-light mb-6">About</h1>
-<p class="mb-6 text-lg leading-relaxed">Write your bio here. You can keep the voice simple and factual. Mention series, process, mediums, and interests.</p>
-<p class="mb-6 text-lg leading-relaxed">Add CV highlights if you like — education, residencies, awards. Keep lines short for readability.</p>
-<p class="text-lg leading-relaxed">Download CV: <a href="#" class="underline">PDF</a></p>
-</article>
-</div>
-</main>
-
-
-<footer class="bg-black text-white py-12 px-6 mt-20">
-<div class="container mx-auto">
-<div class="flex flex-col md:flex-row justify-between items-center">
-<div class="mb-6 md:mb-0">
-<h2 class="text-xl font-medium">EMIL KJERRMAN</h2>
-<p class="text-gray-400 mt-2">© <span id="year"></span> All rights reserved</p>
-</div>
-<div>
-<ul class="flex space-x-6">
-<li><a href="/work.html" class="hover:text-gray-400 transition">Work</a></li>
-<li><a href="/about.html" class="hover:text-gray-400 transition">About</a></li>
-<li><a href="/shows.html" class="hover:text-gray-400 transition">Shows</a></li>
-<li><a href="/contact.html" class="hover:text-gray-400 transition">Contact</a></li>
-</ul>
-</div>
-</div>
-</div>
-</footer>
-
-
-<script>
+  <footer class="py-8 px-4 md:px-8 bg-gray-900 text-white">
+    <div class="container mx-auto text-center">
+      <p>© 2025 Emil Kjerrman. All rights reserved.</p>
+      <div class="flex justify-center space-x-4 mt-4">
+        <a href="#" class="hover:text-gray-400"><i data-feather="instagram"></i></a>
+      </div>
+    </div>
+  </footer>
+  <script> AOS.init({ duration:800, easing:'ease-in-out', once:true }); feather.replace(); </script>
+</body>
 </html>
