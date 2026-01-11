@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Emil Kjerrman</title>
+  <title>About — Emil Kjerrman</title>
   <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -11,125 +11,59 @@
   <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
 
   <style>
-    /* ÉT samlet grid */
-   .grid-container {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 20px;
-  max-width: 900px;   /* lidt smallere end før */
-  margin: 2rem auto;
-}
-
-/* Mindre bokse */
-.thumb-box {
-  aspect-ratio: 3 / 2;  /* smallere end 4/3 */
-  width: 100%;
-  overflow: hidden;
-  border-radius: 8px;
-}
-
-.thumb-box img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-/* Titel under hvert billede */
-.caption {
-  text-align: center;
-  font-size: 0.6rem; /* mindre tekst */
-  margin-top: 0.3rem;
-  color: #333;
-  font-weight: 500;
-
-}
-
-/* Mobil: 1 kolonne */
-@media (max-width: 768px) {
-  .grid-container { grid-template-columns: 1fr; }
-}
-/* Skjul hele projektbokse, som du har markeret som tomme */
-.hidden-project {
-  display: none;
-}
+    .prose-container {
+      max-width: 900px;
+      margin: 2rem auto;
+    }
+    @media (max-width:768px){
+      .prose-container {
+        margin: 1rem;
+      }
+    }
   </style>
 </head>
 
 <body class="bg-gray-100 font-sans">
+
   <header class="py-6 px-4 md:px-8">
     <div class="container mx-auto flex justify-between items-center">
       <h1 class="text-2xl font-bold">Emil Kjerrman</h1>
       <nav>
         <ul class="flex space-x-6">
-<li><a href="/about.html" class="hover:text-gray-600">ABOUT</a></li>
-<li><a href="/shows.html" class="hover:text-gray-600">UPCOMING AND CURRENT SHOWS</a></li>
-<li><a href="/contact.html" class="hover:text-gray-600">CONTACT</a></li>
+          <li><a href="/about.html" class="hover:text-gray-600">ABOUT</a></li>
+          <li><a href="/shows.html" class="hover:text-gray-600">UPCOMING AND CURRENT SHOWS</a></li>
+          <li><a href="/contact.html" class="hover:text-gray-600">CONTACT</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
   <main class="py-12 px-4 md:px-8">
-    <div class="container mx-auto">
-      <!-- ÉN grid-container: fjernede det gamle “Project 1–6”-afsnit -->
-   <div class="grid-container">
-  <div>
-    <a href="new-gallery.html" class="project-item">
-      <div class="thumb-box">
-        <img src="/images/AA 0.jpg" alt="Exhibition 1">
-      </div>
-    </a>
-    <div class="caption">Den Blå Time Arden Asbæk Gallery</div>
-  </div>
+    <div class="prose prose-zinc prose-lg prose-container">
 
-  <div>
-    <a href="new-gallery1.html" class="project-item">
-      <div class="thumb-box">
-        <img src="/images/Rum bedre.png" alt="vordingborg3.jpg">
-      </div>
-    </a>
-    <div class="caption">NARRATIVES FOREVER Væg Gallery</div>
-  </div>
+      <h1>About</h1>
 
-  <div>
-    <a href="new-gallery1.html" class="project-item">
-      <div class="thumb-box">
-        <img src="/images/vordingborg3.jpg" alt="vordingborg3.jpg">
-      </div>
-    </a>
-    <div class="caption">De Blide Vordingborg Kunstforening</div>
-  </div>
-   
+      <p><strong>Emil Kjerrman</strong> (b. 1990, Copenhagen) is a visual artist based in Leipzig. 
+      He primarily works with painting, combining self-produced pigments and oil paint with 
+      classical techniques in a contemporary pictorial practice. His work explores the tension 
+      between materiality and motif, the raw and the cultivated.</p>
 
-  <div>
-    <a href="new-gallery3.html" class="project-item">
-      <div class="thumb-box">
-        <img src="/images/Fresko2.jpg" alt="Exhibition 4">
-      </div>
-    </a>
-    <div class="caption">Ascending Nike entrance of the art academy of Leipzig</div>
-  </div>
+      <p>Kjerrman graduated from the Bergen Academy of Art and Design (2019–2022) and is currently 
+      studying at the Hochschule für Grafik und Buchkunst (HGB) in Leipzig (2023–2026). 
+      He has exhibited in Denmark, Norway, Sweden, Germany, and China, both in solo presentations 
+      and in major group exhibitions.</p>
 
-  <div>
-    <a href="new-gallery4.html" class="project-item">
-      <div class="thumb-box">
-        <img src="/images/Fresko1.jpg" alt="">
-      </div>
-    </a>
-    <div class="caption">Nur für Kurze Zeit ASPN Gallery</div>
-  </div>
+      <p>His awards include the Knud Højgaard Foundation grant for study abroad (2023) 
+      and Grosserer L. F. Foght’s grant for catalogue publication, 
+      <em>"Zwischen uns und der Sonne hängen Ozeane aus leerem Raum"</em>. 
+      Upcoming exhibitions include <em>De Blide</em> at the Nordic Contemporary Art Center in Xiamen, China (2026).</p>
 
+      <p>Instagram: 
+        <a href="https://www.instagram.com/Emilkjerrman" target="_blank" class="underline hover:text-gray-700">
+        @Emilkjerrman</a>
+      </p>
 
-<div class="hidden-project">
-  <a href="new-gallery5.html" class="project-item">
-    <div class="thumb-box">
-      <img src="">
     </div>
-  </a>
-  <div class="caption"></div>
-</div>
-
   </main>
 
   <footer class="py-8 px-4 md:px-8 bg-gray-900 text-white">
@@ -137,9 +71,8 @@
       <p>© 2025 Emil Kjerrman. All rights reserved.</p>
       <div class="flex justify-center space-x-4 mt-4">
         <a href="https://www.instagram.com/emil_kjerrman/" target="_blank" rel="noopener noreferrer" class="hover:text-gray-400">
-  <i data-feather="instagram"></i>
-</a>
-
+          <i data-feather="instagram"></i>
+        </a>
       </div>
     </div>
   </footer>
